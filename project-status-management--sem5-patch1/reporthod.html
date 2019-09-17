@@ -26,14 +26,32 @@
     </nav>
     <!--navbar ends here-->
     <div class="container">
-            <a class="btn btn-primary mt-3" href="newreport.html" role="button">Create Report</a>
 
         <div class="row">
             <div class="col ">
-                <h5 class="mt-1">Reports</h5>
+                <h4 class="text-center mt-5">Project Name: Project Status Management</h4>
+                <h5 class="text-center mt-3">Reports</h5>
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action text-center active">
+                        Report 1
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action text-center">Report 2</button>
+                    <button type="button" class="list-group-item list-group-item-action text-center">Report 3</button>
+                    <button type="button" class="list-group-item list-group-item-action text-center">Report 4</button>
+                    <button type="button" class="list-group-item list-group-item-action text-center">Report 5</button>
+                </div>
 
             </div>
             <div class="col-lg">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                            <i class="fas fa-align-left"></i>
+                            <span>Toggle Sidebar</span>
+                        </button>
+                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-align-justify"></i>
+                        </button>
 
                 <div class="text-center">
                     <h2>Report Heading 3</h2>
@@ -55,14 +73,15 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
                         <div>
-                            <button type="button" id="approve" class="btn btn-success btn-lg">
-                                <span>Approve</span>
-                            </button>
+                            <a href="allprojecthod.html"><button type="button" id="approve"
+                                    class="btn btn-success btn-lg">
+                                    <span>Approve</span>
+                                </button></a>
                         </div>
                         <div class=" ml-auto">
-                            <button type="button" id="disapprove" class="btn btn-danger btn-lg">
-                                <span>Disapprove</span>
-                            </button>
+                            <a href="disapprove.html"><button type="button" id="disapprove" class="btn btn-danger btn-lg">
+                                    <span>Disapprove</span>
+                                </button></a>
                         </div>
                     </div>
                 </nav>
@@ -73,25 +92,25 @@
         </div>
     </div>
     <div class="container mt-3">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Leader</th>
-                        <th>Guide</th>
-                        <th>Project Coordinator</th>
-                        <th>HOD</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>sent</td>
-                        <td>approved</td>
-                        <td>pending</td>
-                        <td>---</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Leader</th>
+                    <th>Guide</th>
+                    <th>Project Coordinator</th>
+                    <th>HOD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>sent</td>
+                    <td>approved</td>
+                    <td>approved</td>
+                    <td>---</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     </div>
     </div>
 
@@ -111,6 +130,19 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
     </script>
 
 </body>
